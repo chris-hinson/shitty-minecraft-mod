@@ -17,7 +17,10 @@ public class StartupCommon
 
     @SubscribeEvent
     public static void onBlockRegistration(final RegistryEvent.Register<Block> blockRegisterEvent) {
-        block = new EnderEmitterBlock().setRegistryName("ender_redstone","ender_redstone_block_registry_name");
+        block = new EnderEmitterBlock();
+        block.setRegistryName("ender_redstone","ender_redstone_block_registry_name");
+
+
         blockRegisterEvent.getRegistry().register(block);
     }
 
@@ -27,8 +30,10 @@ public class StartupCommon
         final int MAXIMUM_STACK_SIZE = 64;
 
         Item.Properties itemProperties = new Item.Properties().maxStackSize(MAXIMUM_STACK_SIZE).group(ItemGroup.REDSTONE);
+
         itemBlock = new BlockItem(block,itemProperties);
         itemBlock.setRegistryName(block.getRegistryName());
+
         itemRegisterEvent.getRegistry().register(itemBlock);
 
     }
