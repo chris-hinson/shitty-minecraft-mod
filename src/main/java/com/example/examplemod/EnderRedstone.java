@@ -27,22 +27,23 @@ public class EnderRedstone
 {
     public static final String MODID = "ender_redstone";
 
-    public static IEventBus MOD_EVENT_BUS = FMLJavaModLoadingContext.get().getModEventBus();
+    public static IEventBus MOD_EVENT_BUS;
 
     public EnderRedstone()
     {
+        MOD_EVENT_BUS = FMLJavaModLoadingContext.get().getModEventBus();
+
         registerCommonEvents();
         DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> EnderRedstone::registerClientOnlyEvents);
     }
 
     public static void registerCommonEvents()
     {
-        MOD_EVENT_BUS.register(EnderEmitterBlock.class);
-        MOD_EVENT_BUS.register(EnderReceiverBlock.class);
+        MOD_EVENT_BUS.register(StartupCommon.class);
     }
 
     public static void registerClientOnlyEvents()
     {
-
+        MOD_EVENT_BUS.register(StartupClientOnly.class);
     }
 }

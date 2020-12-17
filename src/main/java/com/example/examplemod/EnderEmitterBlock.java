@@ -9,4 +9,6 @@ public class EnderEmitterBlock extends Block
     {
         super(Block.Properties.create(Material.ROCK));
     }
+
+
 }
