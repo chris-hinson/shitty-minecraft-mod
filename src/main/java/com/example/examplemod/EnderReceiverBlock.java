@@ -29,6 +29,6 @@ public class EnderReceiverBlock extends Block
 
     @Override
     public int getWeakPower(BlockState blockState, IBlockReader blockAccess, BlockPos pos, Direction side) {
-        return 15;
+        return EnderEmitterBlock.power;
     }
 }
