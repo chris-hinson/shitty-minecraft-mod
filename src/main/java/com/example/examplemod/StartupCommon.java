@@ -18,8 +18,7 @@ public class StartupCommon
     @SubscribeEvent
     public static void onBlockRegistration(final RegistryEvent.Register<Block> blockRegisterEvent) {
         block = new EnderEmitterBlock();
-        block.setRegistryName("ender_redstone","ender_redstone_block_registry_name");
-
+        block.setRegistryName("ender_redstone","ender_redstone_emitter");
 
         blockRegisterEvent.getRegistry().register(block);
     }

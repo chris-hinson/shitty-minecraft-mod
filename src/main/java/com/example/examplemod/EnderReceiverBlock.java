@@ -1,6 +1,7 @@
 package com.example.examplemod;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.material.Material;
 
 public class EnderReceiverBlock extends Block
