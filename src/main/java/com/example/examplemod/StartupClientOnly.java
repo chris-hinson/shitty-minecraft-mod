@@ -8,7 +8,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public class StartupClientOnly {
 
     @SubscribeEvent
-    public static void onClientSetupEvent(FMLClientSetupEvent event) {
-        RenderTypeLookup.setRenderLayer(StartupCommon.block, RenderType.getSolid());
+    public static void onClientSetupEvent(FMLClientSetupEvent event)
+    {
+        for(int i=0; i<StartupCommon.blocks.length; i++)
+        {
+            RenderTypeLookup.setRenderLayer(StartupCommon.blocks[i], RenderType.getSolid());
+        }
     }
 }

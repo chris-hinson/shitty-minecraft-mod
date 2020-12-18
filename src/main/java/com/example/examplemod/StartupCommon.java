@@ -9,28 +9,33 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 public class StartupCommon
 {
-    public static Block block;
-    public static BlockItem itemBlock;
+    public static Block[] blocks = new Block[2];
 
     @SubscribeEvent
     public static void onBlockRegistration(final RegistryEvent.Register<Block> blockRegisterEvent) {
-        block = new EnderEmitterBlock();
-        block.setRegistryName("ender_redstone","ender_redstone_emitter");
+        blocks[0] = new EnderEmitterBlock().setRegistryName("ender_redstone","ender_redstone_emitter");
+        blocks[1] = new EnderReceiverBlock().setRegistryName("ender_redstone", "ender_redstone_receiver");
 
-        blockRegisterEvent.getRegistry().register(block);
+        for(int i=0; i<blocks.length; i++)
+        {
+            blockRegisterEvent.getRegistry().register(blocks[i]);
+        }
     }
 
     @SubscribeEvent
     public static void onItemsRegistration(final RegistryEvent.Register<Item> itemRegisterEvent)
     {
         final int MAXIMUM_STACK_SIZE = 64;
-
         Item.Properties itemProperties = new Item.Properties().maxStackSize(MAXIMUM_STACK_SIZE).group(ItemGroup.REDSTONE);
 
-        itemBlock = new BlockItem(block,itemProperties);
-        itemBlock.setRegistryName(block.getRegistryName());
+        //Assumes stack size of 64 and Redstone item group for all items, which is currently true
+        for(int i=0; i<blocks.length; i++)
+        {
+            BlockItem itemBlock = new BlockItem(blocks[i], itemProperties);
+            itemBlock.setRegistryName(blocks[i].getRegistryName());
+            itemRegisterEvent.getRegistry().register(itemBlock);
+        }
 
-        itemRegisterEvent.getRegistry().register(itemBlock);
 
     }
 }

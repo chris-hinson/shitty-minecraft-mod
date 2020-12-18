@@ -7,6 +7,6 @@ public class EnderReceiverBlock extends Block
 {
     public EnderReceiverBlock()
     {
-        super(Block.Properties.create(Material.ROCK));
+        super(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.0f));
     }
 }

@@ -1,3 +1,4 @@
 {
-  "block.ender_redstone.ender_redstone_emitter": "Ender Emitter"
+  "block.ender_redstone.ender_redstone_emitter": "Ender Emitter",
+  "block.ender_redstone.ender_redstone_receiver": "Ender Receiver"
 }

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "ender_redstone:block/ender_receiver_face",
+    "up": "ender_redstone:block/ender_receiver_face",
+    "north": "ender_redstone:block/ender_receiver_face",
+    "east": "ender_redstone:block/ender_receiver_face",
+    "south": "ender_redstone:block/ender_receiver_face",
+    "west": "ender_redstone:block/ender_receiver_face",
+    "particle": "block/lapis_block"
+  }
+}
