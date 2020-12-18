@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "ender_redstone:block/ender_emitter_face",
+    "up": "ender_redstone:block/ender_emitter_face",
+    "north": "ender_redstone:block/ender_emitter_face",
+    "east": "ender_redstone:block/ender_emitter_face",
+    "south": "ender_redstone:block/ender_emitter_face",
+    "west": "ender_redstone:block/ender_emitter_face",
+    "particle": "block/gold_block"
+  }
+}

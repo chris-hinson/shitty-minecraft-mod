@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": {"model":  "ender_redstone:block/ender_emitter_model"}
+  }
+}
